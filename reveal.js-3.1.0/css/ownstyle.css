@@ -1,0 +1,31 @@
+#container {
+    width: inherit;
+    max-width: 960px;
+    margin: 0 auto 0 auto;
+}
+
+#kopfleiste {
+    font-size: 36px;
+    margin: 0px 0px 15px 0px;
+    padding: 0px 0px 0px 15px;
+    width: inherit;
+    height: 80px;
+    text-align: center;
+}
+
+#logo {
+    width: auto;
+    height: auto;
+    font-family: serif;
+    float: left;
+}
+
+#inhalt {
+    padding: 10px 30px 10px 30px;
+    overflow: hidden;
+    /*Damit das Layout mit float funktioniert*/
+    height: auto;
+    width: auto;
+    font-size: 18px;
+    text-align: justify;
+}

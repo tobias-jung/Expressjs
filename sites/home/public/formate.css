@@ -1,0 +1,65 @@
+
+@charset "utf-8";
+
+body {
+background-color: white;
+margin: 0px;
+padding: 8px;
+font-family: Helvetica, Arial;
+color: black;
+}
+
+h1 {
+margin: 0px;
+padding: 0px;
+    font-size: 36px;
+    line-height: 80px;
+}
+#site{
+background-color: aliceblue;
+
+
+}
+
+#container{
+width: inherit;
+max-width: 960px;
+margin: 0 auto 0 auto;
+background-color: white;
+}
+#kopfleiste {
+    font-size: 36px;
+    margin: 0px 0px 15px 0px;
+    padding: 0px 0px 0px 15px;
+    width: inherit;
+    height: 80px;
+    background-color: bisque;
+    h1 { color: red; text-align: center; background-color: black; font-size: 36px;}
+}
+#navigation {
+margin: 0px 15px 0px 0px;
+padding: 10px;
+width : auto;
+height: auto;
+font-family: serif;
+background-color: greenyellow;
+float : left;
+}
+
+#navigation li {
+font-size: 16px;
+}
+
+#inhalt{
+padding: 10px 15px 10px 15px;
+overflow: hidden /*Damit das Layout mit float funktioniert*/
+height: auto;
+width: auto;
+font-size: 16px;
+    line-height: 1.4;
+p { font-family: sans-serif; font-size: 15px; line-height: 1.3;}
+    background-color: blue;
+
+
+}
+

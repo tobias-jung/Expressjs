@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Node.js - Express Framework</title>
+
+    <meta name="author" content="Tobias Jung">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/ownstyle.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+            <section>
+                <!--Slide 1-->
+                <h1>Node.js</h1>
+                <h3>Express Framework</h3>
+                <img src=pics/nodejs.png width=auto height=auto alt=nodelogo>
+                <p>
+                    <small>Erstellt von Tobias Jung</small>
+                </p>
+            </section>
+
+            <section>
+                <!--Slide 2-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Inhalt</h2></div>
+                    <div id=logo><img src=pics/Einleitung.jpeg width="213" height="162" alt=roterFaden></div>
+
+                    <div id=inhalt>
+                        <ul>
+                            <li>Grundlagen</li>
+                            <li>Anwndungsbeispiele</li>
+                            <li>Installation <i>Express.js</i></li>
+                            <li>Die <i>app.js</i></li>
+                            <li><i>GET</i>-Methode</li>
+                            <li><i>POST</i>-Methode</li>
+                            <li>Fazit</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <!--Slide 3-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Grundlagen</h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>Das Express Framework (Express.js) ist ein serverseitiges <i>Web Applikation Framework</i>, welches Werkzeuge zur Entwicklung von Webanwendungen bereitstellt.</p>
+
+                        <p><i>Express.js</i> enthält ein durchgängig umgesetztes Middleware-Konzept, um die entkoppelte Entwicklung von simplen Webservern bis zu ausgefeilten Webservices zu ermöglichen. </p>
+
+                        <p>Um <i>Express.js</i> nutzen zu können, muss <i>Node.js</i> und <i>Express.js</i> auf dem Server installiert werden!</p>
+
+                        <p>Im Folgenden wird die Installaton von <i>Express.js</i> gezeigt.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!--Slide 4-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Anwendungsbeispiele</h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>Projektanwendungsbeispiele für Express.js bzw. der Implementierung von Node.js:</p>
+
+                        <img src=pics/MySpace.png width="auto" height="auto" alt=MySpace>
+                        <br><img src=pics/Ghost-Logo.png width="auto" height="auto" alt=Ghost-Logo>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <!--Slide 5-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Installation <i>Express.js</i></h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>1. Erstelle das JASON-Package für die Applikation:</p>
+                        <pre><code data-trim contenteditable>
+                                npm init
+                                </code></pre>
+                        <p>2. Geben Sie den Namen der Datei an:</p>
+                        <pre><code data-trim contenteditable>
+                                entry point: (app.js)
+                                </code></pre>
+                        <p>3. Im Arbeitsverzeichnis <i>Express.js</i> installieren:</p>
+                        <pre><code data-trim contenteditable>
+                                npm install express
+                                </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!--Slide 6-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Die <i>app.js</i></h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>Nachfolgender Code steht in der <i>app.js</i>. Er startet einen Webserver und hört auf den Port: 3000:</p>
+                        <pre><code data-trim contenteditable>
+var express = require('express');
+var app = express();
+var server = app.listen(3000, function () {
+var host = server.address().address;
+var port = server.address().port;
+console.log('Example app listening at http://%s:%s', host, port);
+					       </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!--Slide 7-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2><i>GET</i>-Methode</h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>So kann eine einfache GET-Methode aussehen:</p>
+                        <pre><code data-trim contenteditable>
+var express = require('express');
+var app = express();
+app.get('/', function (req, res) {
+res.send('Hello World!');
+});
+var server = app.listen(5000, function () {
+var host = server.address().address;
+var port = server.address().port;
+console.log('Example app listening at http://%s:%s', host, port);
+});
+					           </code></pre>
+                        <p>Es wird ein Webserver auf Port 5000 gestartet und "Hello World" beim Aufruf zurückgegeben!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!--Slide 8-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2><i>POST</i>-Methode</h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>So kann eine einfache POST-Methode aussehen:</p>
+                        <pre><code data-trim contenteditable>
+app.post('/', function (req, res) {
+res.send('Ich habe einen Post erhalten!');
+});
+					           </code></pre>
+                        <p>In der HTML-Datei kann dies für ein Formular verwendet werden. Beispiel:</p>
+                        <pre><code><form method="post" action="/">
+<input type="text" name="username">
+<input type="Submit"></form></code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!--SLide 9-->
+                <div id=container>
+                    <div id=kopfleiste>
+                        <h2>Fazit</h2></div>
+
+                    <div id=logo><img src=pics/nodejs.png width="213" height="162" alt=nodelogo></div>
+
+                    <div id=inhalt>
+                        <p>Mithilfe von <i>Express.js</i> kann serverseitig eine Web-Applikation zur Verfügung gestellt werden!</p>
+
+                        <p>Voraussetzung für die Verwendung ist die Installation von <i>Node.js</i>.</p>
+
+                        <p>Als Kommunikationsschnittstelle für den Webserver dient in unserem Beispiel die Applikation <i>app!</i></p>
+                        <p>Bekannte Funktionen sind <i>app.get()</i> und <i>app.post()</i>!</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <!--Slide 10-->
+                <h3>Vielen Dank für Ihre Aufmerksamkeit</h3>
+                <img src=pics/question.jpeg width=auto height=auto alt=question>
+
+            </section>
+
+            <section>
+                <!--Slide 11-->
+                <div id=kopfleiste>
+                    <h2>Quellen</h2></div>
+                <div id=inhalt>
+                    <ul>
+                        <li><a href="http://evanhahn.com/understanding-express/">Understanding Express</a></li>
+                        <li><a href="http://expressjs.com/api.html">ExpressJs (API)</a></li>
+                        <li><a href="http://expressjs.com/starter/installing.html">Express JS Starter</a></li>
+                        <li><a href="https://nodejs.org/community/">Node JS Community</a></li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.querySelector('pre code');
+                    },
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                }
+				]
+        });
+    </script>
+
+</body>
+
+</html>
