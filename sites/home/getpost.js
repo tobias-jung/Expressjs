@@ -2,7 +2,7 @@
 var express = require('express');
 //app --> 1 Instanz der express-Methode --> Erstellt eine express-Applikation!
 var app = express();
-
+var bodyParser = require('body-parser');
 var http = require("http");
 
 // Express is a built-in-middleware. Express.static basiert auf serve-static und wird benötigt, um den statische Pfade einer Express-Applikation anzusprechen ---> hier, statischer Inhalt der App im Ordner "public"
@@ -21,12 +21,13 @@ var server = app.listen(3001, function () {
 
 // respond with "Hello World!" on the homepage
 app.get('/', function (req, res) {
-    res.sendFile("Hallo Welt");
+    res.sendFile("Hallo Welt")
 });
 
 // accept POST request on the homepage
 app.post('/', function (req, res) {
-    res.send("Ich habe einen Post erhalten!");
+    var input = req.param('username');
+    res.send("Ich habe einen Post erhalten!" + input);
 });
 
 // accept PUT request at /user
@@ -51,3 +52,8 @@ app.get("/get/:who", function (req, res) {
     res.end("Hallo " + req.params.who + ".");
     // Fun fact: this has security issues
 });
+
+/*app.post('/', function (request, response) {
+    var input = request.body.username
+    res.send("Ich habe einen Post erhalten!" + input);
+});*/

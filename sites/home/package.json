@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "start.js",
   "dependencies": {
+    "body-parser": "^1.13.3",
     "express": "^4.13.3"
   },
   "devDependencies": {},
