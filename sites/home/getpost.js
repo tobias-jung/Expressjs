@@ -5,8 +5,15 @@ var app = express();
 var bodyParser = require('body-parser');
 var http = require("http");
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
 // Express is a built-in-middleware. Express.static basiert auf serve-static und wird benötigt, um den statische Pfade einer Express-Applikation anzusprechen ---> hier, statischer Inhalt der App im Ordner "public"
 app.use(express.static('public'));
+//app.use(require('connect').bodyParser());
+
+
 
 
 //Ermöglicht das ansprechen des HTTP-Webserver ---> Gleich der http.Server.listen()-Methode in Node Hört auf localhost Port 3001
@@ -26,7 +33,7 @@ app.get('/', function (req, res) {
 
 // accept POST request on the homepage
 app.post('/', function (req, res) {
-    var input = req.param('username');
+    var input = req.body.username;
     res.send("Ich habe einen Post erhalten!" + input);
 });
 
