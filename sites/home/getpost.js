@@ -3,7 +3,6 @@ var express = require('express');
 //app --> 1 Instanz der express-Methode --> Erstellt eine express-Applikation!
 var app = express();
 var bodyParser = require('body-parser');
-var http = require("http");
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -37,17 +36,6 @@ app.post('/', function (req, res) {
     res.send("Ich habe einen Post erhalten!" + input);
 });
 
-// accept PUT request at /user
-app.put('/user', function (req, res) {
-    res.send('Got a PUT request at /user');
-});
-
-// accept DELETE request at /user
-app.delete('/user', function (req, res) {
-    res.send('Got a DELETE request at /user');
-});
-
-
 // this middleware will be executed for every request to the app
 app.use(function (req, res, next) {
     console.log('HALLO REQUEST!');
@@ -59,8 +47,3 @@ app.get("/get/:who", function (req, res) {
     res.end("Hallo " + req.params.who + ".");
     // Fun fact: this has security issues
 });
-
-/*app.post('/', function (request, response) {
-    var input = request.body.username
-    res.send("Ich habe einen Post erhalten!" + input);
-});*/

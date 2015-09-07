@@ -26,6 +26,6 @@
     /*Damit das Layout mit float funktioniert*/
     height: auto;
     width: auto;
-    font-size: 18px;
+    font-size: 0.8em;
     text-align: justify;
 }
