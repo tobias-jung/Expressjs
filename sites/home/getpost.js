@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
 // accept POST request on the homepage
 app.post('/', function (req, res) {
     var input = req.body.username;
-    res.send("Ich habe einen Post erhalten!" + input);
+    res.send("Ich habe einen Post erhalten! Inhalt: " + input);
 });
 
 // this middleware will be executed for every request to the app
