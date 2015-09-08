@@ -141,7 +141,7 @@
                         <pre><code data-trim contenteditable>
 var express = require('express');
 var app = express();
-var server = app.listen(3000, function () {
+var server = app.listen(3001, function () {
 var host = server.address().address;
 var port = server.address().port;
 console.log('Example app listening at http://%s:%s', host, port);
@@ -165,7 +165,7 @@ app.get('/', function (req, res) {
 res.send('Hello World!');
 });
 					           </code></pre>
-                        <p>Es wird ein Webserver auf Port 5000 gestartet und "Hello World" beim Aufruf zurückgegeben!</p>
+                        <p>Es wird beim Aufruf "Hello World!" zurückgegeben!</p>
                     </div>
                 </div>
             </section>
