@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({
 
 // Express is a built-in-middleware. Express.static basiert auf serve-static und wird benötigt, um den statische Pfade einer Express-Applikation anzusprechen ---> hier, statischer Inhalt der App im Ordner "public"
 app.use(express.static('public'));
-//app.use(require('connect').bodyParser());
 
 
 
