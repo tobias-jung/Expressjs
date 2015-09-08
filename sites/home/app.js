@@ -44,5 +44,4 @@ app.use(function (req, res, next) {
 // get-Methode, um Benutzer zu begrüßen
 app.get("/get/:who", function (req, res) {
     res.end("Hallo " + req.params.who + ".");
-    // Fun fact: this has security issues
 });
